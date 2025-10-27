@@ -3,6 +3,34 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
+// Ticker component for Match Score
+function MatchScoreTicker({ targetValue, progress }: { targetValue: number; progress: number }) {
+  const [displayValue, setDisplayValue] = useState(0)
+
+  useEffect(() => {
+    if (progress > 0.5) {
+      const duration = 1500
+      const startTime = Date.now()
+      const startValue = 0
+
+      const updateValue = () => {
+        const elapsed = Date.now() - startTime
+        const currentProgress = Math.min(elapsed / duration, 1)
+        const currentValue = Math.floor(startValue + (targetValue - startValue) * currentProgress)
+        setDisplayValue(currentValue)
+
+        if (currentProgress < 1) {
+          requestAnimationFrame(updateValue)
+        }
+      }
+
+      requestAnimationFrame(updateValue)
+    }
+  }, [progress, targetValue])
+
+  return <span>{displayValue}%</span>
+}
+
 export default function Context() {
   const spread1Ref = useRef<HTMLDivElement>(null)
   const spread2Ref = useRef<HTMLDivElement>(null)
@@ -155,7 +183,7 @@ export default function Context() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#332D2A]/30 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white/90 text-sm uppercase tracking-wider" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 500 }}>
-                  Curated Selection
+                  Silhouette & Taste
                 </div>
               </div>
             </div>
@@ -170,40 +198,68 @@ export default function Context() {
               }}
             >
               <div className="w-full bg-white border border-[#EAE3DB] rounded-lg p-8 shadow-sm">
-                <h3 className="text-lg uppercase tracking-wider text-[#332D2A] mb-6" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
-                  Curated Intelligence
+                <h3 className="text-lg uppercase tracking-wider text-[#332D2A] mb-8" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
+                  Client Taste Profile
                 </h3>
-                <div className="space-y-6">
-                  {/* Radar Chart Visualization */}
-                  <div className="relative aspect-square max-w-[200px]">
-                    <svg viewBox="0 0 200 200" className="w-full h-full">
-                      {/* Radial lines */}
-                      <line x1="100" y1="100" x2="100" y2="20" stroke="#EAE3DB" strokeWidth="1"/>
-                      <line x1="100" y1="100" x2="177" y2="85" stroke="#EAE3DB" strokeWidth="1"/>
-                      <line x1="100" y1="100" x2="100" y2="180" stroke="#EAE3DB" strokeWidth="1"/>
-                      <line x1="100" y1="100" x2="23" y2="115" stroke="#EAE3DB" strokeWidth="1"/>
-                      {/* Area shape */}
-                      <polygon 
-                        points="100,60 140,90 100,100 60,90" 
-                        fill="#C07A56" 
-                        fillOpacity="0.1"
-                        stroke="#C07A56"
-                        strokeWidth="2"
-                      />
-                    </svg>
+                
+                {/* Section 1: Product */}
+                <div className="mb-8 pb-8 border-b border-[#EAE3DB]">
+                  <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-4" style={{ fontFamily: 'var(--font-switzer)' }}>Item Profile:</div>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Aesthetic:</div>
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Architectural</div>
+                    </div>
+                    <div>
+                      <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Palette:</div>
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Neutral</div>
+                    </div>
+                    <div>
+                      <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Fit:</div>
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Structured</div>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <div>
-                      <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Collection</div>
-                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Sophisticated, Monochromatic</div>
+                </div>
+
+                {/* Section 2: Client Match */}
+                <div className="mb-8 pb-8 border-b border-[#EAE3DB]">
+                  <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-4" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match:</div>
+                  <div className="space-y-3">
+                    <div 
+                      style={{
+                        opacity: spread2Progress > 0.5 ? 1 : 0,
+                        transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                        transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+                      }}
+                    >
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Architectural</div>
                     </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Design Elements</div>
-                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Double-Breasted, Structured</div>
+                    <div 
+                      style={{
+                        opacity: spread2Progress > 0.5 ? 1 : 0,
+                        transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                        transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+                      }}
+                    >
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Neutral Palette</div>
                     </div>
-                    <div className="pt-2">
-                      <div className="text-xs uppercase tracking-wide text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 500 }}>Match Score: 94%</div>
+                    <div 
+                      style={{
+                        opacity: spread2Progress > 0.5 ? 1 : 0,
+                        transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                        transition: 'opacity 0.6s ease-out 0.6s, transform 0.6s ease-out 0.6s'
+                      }}
+                    >
+                      <div className="text-base text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Structured Fit</div>
                     </div>
+                  </div>
+                </div>
+
+                {/* Section 3: The Score */}
+                <div>
+                  <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-2" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match Score</div>
+                  <div className="text-[72px] leading-none text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)' }}>
+                    <MatchScoreTicker targetValue={92} progress={spread2Progress} />
                   </div>
                 </div>
               </div>
@@ -219,7 +275,7 @@ export default function Context() {
               transition: 'opacity 0.8s ease-out'
             }}
           >
-            Connect the editorial vision to the individual client. Turn high-level trends into personal, predictive recommendations.
+            Connect the editorial vision to the individual client. Our engine analyzes every item against each client's unique taste profile, turning inventory into a predictive, personal recommendation.
           </p>
         </div>
 
@@ -317,7 +373,7 @@ export default function Context() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#332D2A]/30 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white/90 text-sm uppercase tracking-wider" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 500 }}>
-                  Curated Selection
+                  Silhouette & Taste
                 </div>
               </div>
             </div>
@@ -332,38 +388,68 @@ export default function Context() {
                 transition: 'opacity 0.8s ease-out, transform 0.8s ease-out, clip-path 0.8s ease-out'
               }}
             >
-              <h3 className="text-base uppercase tracking-wider text-[#332D2A] mb-4" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
-                Curated Intelligence
+              <h3 className="text-base uppercase tracking-wider text-[#332D2A] mb-6" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
+                Client Taste Profile
               </h3>
-              <div className="space-y-4">
-                {/* Radar Chart Visualization */}
-                <div className="relative aspect-square max-w-[120px] mx-auto">
-                  <svg viewBox="0 0 200 200" className="w-full h-full">
-                    <line x1="100" y1="100" x2="100" y2="20" stroke="#EAE3DB" strokeWidth="1"/>
-                    <line x1="100" y1="100" x2="177" y2="85" stroke="#EAE3DB" strokeWidth="1"/>
-                    <line x1="100" y1="100" x2="100" y2="180" stroke="#EAE3DB" strokeWidth="1"/>
-                    <line x1="100" y1="100" x2="23" y2="115" stroke="#EAE3DB" strokeWidth="1"/>
-                    <polygon 
-                      points="100,60 140,90 100,100 60,90" 
-                      fill="#C07A56" 
-                      fillOpacity="0.1"
-                      stroke="#C07A56"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
+              
+              {/* Section 1: Product */}
+              <div className="mb-6 pb-6 border-b border-[#EAE3DB]">
+                <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-3" style={{ fontFamily: 'var(--font-switzer)' }}>Item Profile:</div>
                 <div className="space-y-2">
                   <div>
-                    <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Collection</div>
-                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Sophisticated, Monochromatic</div>
+                    <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Aesthetic:</div>
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Architectural</div>
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Design Elements</div>
-                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Double-Breasted, Structured</div>
+                    <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Palette:</div>
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Neutral</div>
                   </div>
-                  <div className="pt-2">
-                    <div className="text-xs uppercase tracking-wide text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 500 }}>Match Score: 94%</div>
+                  <div>
+                    <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-1" style={{ fontFamily: 'var(--font-switzer)' }}>Fit:</div>
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Structured</div>
                   </div>
+                </div>
+              </div>
+
+              {/* Section 2: Client Match */}
+              <div className="mb-6 pb-6 border-b border-[#EAE3DB]">
+                <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-3" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match:</div>
+                <div className="space-y-2">
+                  <div 
+                    style={{
+                      opacity: spread2Progress > 0.5 ? 1 : 0,
+                      transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                      transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s'
+                    }}
+                  >
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Architectural</div>
+                  </div>
+                  <div 
+                    style={{
+                      opacity: spread2Progress > 0.5 ? 1 : 0,
+                      transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                      transition: 'opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s'
+                    }}
+                  >
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Neutral Palette</div>
+                  </div>
+                  <div 
+                    style={{
+                      opacity: spread2Progress > 0.5 ? 1 : 0,
+                      transform: spread2Progress > 0.5 ? 'translateX(0)' : 'translateX(-10px)',
+                      transition: 'opacity 0.6s ease-out 0.6s, transform 0.6s ease-out 0.6s'
+                    }}
+                  >
+                    <div className="text-sm text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>✓  Prefers: Structured Fit</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 3: The Score */}
+              <div>
+                <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-2" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match Score</div>
+                <div className="text-[48px] leading-none text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)' }}>
+                  <MatchScoreTicker targetValue={92} progress={spread2Progress} />
                 </div>
               </div>
             </div>
@@ -377,7 +463,7 @@ export default function Context() {
                 transition: 'opacity 0.8s ease-out'
               }}
             >
-              Connect the editorial vision to the individual client. Turn high-level trends into personal, predictive recommendations.
+              Connect the editorial vision to the individual client. Our engine analyzes every item against each client's unique taste profile, turning inventory into a predictive, personal recommendation.
             </p>
           </div>
         </div>
@@ -385,4 +471,5 @@ export default function Context() {
     </section>
   )
 }
+
 
