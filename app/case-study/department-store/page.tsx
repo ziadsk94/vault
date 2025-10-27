@@ -12,7 +12,6 @@ export default function DepartmentStoreCaseStudy() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Track when metrics animate
       const metricsSection = document.getElementById('key-metrics')
       if (metricsSection && !hasAnimated) {
         const rect = metricsSection.getBoundingClientRect()
@@ -21,7 +20,6 @@ export default function DepartmentStoreCaseStudy() {
         }
       }
 
-      // Track when chart animates
       if (chartRef.current && !chartAnimated) {
         const rect = chartRef.current.getBoundingClientRect()
         if (rect.top < window.innerHeight * 0.8) {
@@ -29,7 +27,6 @@ export default function DepartmentStoreCaseStudy() {
         }
       }
 
-      // Track CTA visibility
       const ctaSection = document.getElementById('final-cta')
       if (ctaSection) {
         const ctaRect = ctaSection.getBoundingClientRect()
@@ -428,7 +425,6 @@ export default function DepartmentStoreCaseStudy() {
   )
 }
 
-// Metric Block Component
 function MetricBlock({ data, context, hasAnimated, isMobile = false }: { data: string, context: string, hasAnimated: boolean, isMobile?: boolean }) {
   const [displayedValue, setDisplayedValue] = useState(0)
   

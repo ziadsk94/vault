@@ -15,13 +15,10 @@ export default function HowItWorks() {
         const sectionHeight = rect.height
         const viewportHeight = window.innerHeight
         
-        // Calculate scroll progress through section
-        // Start tracking when section top enters viewport
         const scrolled = Math.max(0, viewportHeight - sectionTop - 300)
         const totalScrollable = sectionHeight + viewportHeight - 300
         const progress = Math.min(1, scrolled / totalScrollable)
         
-        // Determine which block is active based on scroll position
         if (progress < 0.35) {
           setActiveBlock(1)
         } else if (progress < 0.60) {

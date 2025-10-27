@@ -404,7 +404,6 @@ export default function ResultsPage() {
   )
 }
 
-// Metric Number Component
 function MetricNumber({ value, hasAnimated }: { value: string, hasAnimated: boolean }) {
   const [displayedValue, setDisplayedValue] = useState(0)
   

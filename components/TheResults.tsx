@@ -75,15 +75,13 @@ export default function TheResults() {
       const isMobile = window.innerWidth < 768
       
       metricBlocks.forEach((block, index) => {
-        if (hasAnimated[index]) return // Already animated
+        if (hasAnimated[index]) return
         
-        // Check the appropriate ID based on screen size
         const element = document.getElementById(isMobile ? `metric-mobile-${index}` : `metric-${index}`)
         if (element) {
           const rect = element.getBoundingClientRect()
           const windowHeight = window.innerHeight
           
-          // Check if element is in viewport and visible
           if (rect.top < windowHeight && rect.bottom > 0 && rect.width > 0) {
             setHasAnimated(prev => ({ ...prev, [index]: true }))
           }

@@ -91,7 +91,7 @@ export default function PlatformPage() {
 
   const getUIVisual = (moduleNumber: number) => {
     switch(moduleNumber) {
-      case 1: // Unified Client Profile
+      case 1:
         return (
           <div className="p-8 space-y-6">
             <div className="h-8 bg-[#EAE3DB] rounded w-1/3"></div>
@@ -108,7 +108,7 @@ export default function PlatformPage() {
             </div>
           </div>
         )
-      case 2: // Live Inventory Engine
+      case 2:
         return (
           <div className="p-8 space-y-6">
             <div className="space-y-3">
@@ -125,7 +125,7 @@ export default function PlatformPage() {
             </div>
           </div>
         )
-      case 3: // Predictive Merchandising
+      case 3:
         return (
           <div className="p-8 space-y-6">
             <div className="flex gap-2">
@@ -144,7 +144,7 @@ export default function PlatformPage() {
             </div>
           </div>
         )
-      case 4: // Associate & Editorial Tools
+      case 4:
         return (
           <div className="p-8 space-y-6">
             <div className="h-8 bg-[#D4CCC4] rounded"></div>
@@ -434,10 +434,9 @@ export default function PlatformPage() {
   )
 }
 
-// UI Visual Display Component
 function UIVisualDisplay({ moduleNumber }: { moduleNumber: number }) {
   switch(moduleNumber) {
-    case 1: // Unified Client Profile
+    case 1:
       return (
         <div className="p-8 space-y-6">
           <div className="h-8 bg-[#EAE3DB] rounded w-1/3"></div>
@@ -517,7 +516,6 @@ function UIVisualDisplay({ moduleNumber }: { moduleNumber: number }) {
   }
 }
 
-// Mobile Component
 function MobilePlatform({ modules }: { modules: any[] }) {
   const [mobileActive, setMobileActive] = useState(1)
   

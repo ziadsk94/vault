@@ -9,7 +9,6 @@ export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const isMobile = useRef(false)
 
-  // Handle mouse movement for desktop
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current && !isMobile.current) {
@@ -27,7 +26,6 @@ export default function Hero() {
     }
   }, [])
 
-  // Handle device orientation for mobile/tablet gyroscope
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.beta !== null && e.gamma !== null) {
@@ -38,9 +36,7 @@ export default function Hero() {
       }
     }
 
-    // Request permission for iOS 13+
     if (typeof window !== 'undefined' && 'DeviceOrientationEvent' in window) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const DeviceOrientationEvent = window.DeviceOrientationEvent as any
       if (DeviceOrientationEvent.requestPermission) {
         DeviceOrientationEvent.requestPermission().then((response: string) => {
@@ -58,7 +54,6 @@ export default function Hero() {
     }
   }, [])
 
-  // Detect mobile
   useEffect(() => {
     const checkMobile = () => {
       isMobile.current = window.innerWidth < 768
@@ -68,7 +63,6 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Calculate grid transform based on device
   const gridTransform = isMobile.current 
     ? `translate(${deviceOrientation.gamma * 0.5}px, ${deviceOrientation.beta * 0.5}px)`
     : `translate(${-mousePosition.x * 0.15}px, ${-mousePosition.y * 0.15}px)`

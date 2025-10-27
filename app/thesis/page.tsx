@@ -16,7 +16,6 @@ export default function ThesisPage() {
         const rect = keyPhrase.getBoundingClientRect()
         const viewportCenter = window.innerHeight / 2
         
-        // Check if the key phrase is at viewport center
         if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
           setImageState('data')
         } else {
@@ -24,7 +23,6 @@ export default function ThesisPage() {
         }
       }
 
-      // Check if CTA should be visible
       const ctaSection = document.getElementById('final-cta')
       if (ctaSection) {
         const ctaRect = ctaSection.getBoundingClientRect()

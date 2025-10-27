@@ -97,7 +97,6 @@ export const switzer = localFont({
   display: 'swap',
 })
 
-// Ogg Display font family
 export const oggDisplay = localFont({
   src: [
     {
