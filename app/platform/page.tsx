@@ -173,11 +173,9 @@ export default function PlatformPage() {
 
   return (
     <main className="bg-[#F7F5F2]">
-      {/* Hero Section */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-6xl mx-auto px-6 xl:px-0">
           
-          {/* Headline */}
           <h1 
             className="text-[60px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A] mb-6"
             style={{ fontFamily: 'var(--font-ogg-display)' }}
@@ -185,7 +183,6 @@ export default function PlatformPage() {
             The Single Source of Truth.
           </h1>
 
-          {/* Sub-headline */}
           <p 
             className="text-[#332D2A] leading-relaxed max-w-3xl mb-12"
             style={{ 
@@ -196,9 +193,7 @@ export default function PlatformPage() {
             A detailed exploration of the Vault platform, from unified data infrastructure to predictive, actionable tools.
           </p>
 
-          {/* Visual */}
           <div className="relative aspect-[16/9] bg-white border border-[#EAE3DB] rounded-lg overflow-hidden shadow-sm">
-            {/* Top Bar */}
             <div className="absolute top-0 left-0 right-0 h-12 bg-[#EAE3DB] border-b border-[#D4CCC4] flex items-center px-4 gap-2">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -207,23 +202,18 @@ export default function PlatformPage() {
               </div>
             </div>
 
-            {/* Dashboard Content */}
             <div className="absolute inset-0 pt-12 p-6 grid grid-cols-12 gap-4">
               
-              {/* Left Sidebar - Client Profile */}
               <div className="col-span-3 bg-[#F7F5F2] p-4 rounded border border-[#EAE3DB]">
                 <div className="w-16 h-16 bg-[#EAE3DB] rounded-full mx-auto mb-3"></div>
                 <div className="h-4 bg-[#D4CCC4] rounded w-3/4 mx-auto mb-2"></div>
                 <div className="h-3 bg-[#EAE3DB] rounded w-1/2 mx-auto"></div>
               </div>
 
-              {/* Main Content Area */}
               <div className="col-span-9 space-y-4">
                 
-                {/* Header */}
                 <div className="h-8 bg-[#EAE3DB] rounded w-1/3"></div>
                 
-                {/* Stats Row */}
                 <div className="grid grid-cols-3 gap-3">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="h-24 bg-[#F7F5F2] rounded p-3 border border-[#EAE3DB]">
@@ -233,7 +223,6 @@ export default function PlatformPage() {
                   ))}
                 </div>
 
-                {/* Chart Area */}
                 <div className="h-32 bg-gradient-to-br from-[#EAE3DB] to-[#D4CCC4] rounded border border-[#EAE3DB] p-4 flex items-center justify-center">
                   <div className="text-center">
                     <div className="h-6 bg-white/50 rounded w-32 mx-auto mb-2"></div>
@@ -241,7 +230,6 @@ export default function PlatformPage() {
                   </div>
                 </div>
 
-                {/* List Items */}
                 <div className="space-y-2">
                   {[1, 2].map((i) => (
                     <div key={i} className="flex items-center gap-3 h-12 bg-[#F7F5F2] rounded p-3 border border-[#EAE3DB]">
@@ -259,12 +247,10 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Desktop/Tablet - The Core Pillars */}
       <section className="relative bg-[#F7F5F2] py-20 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           <div className="grid grid-cols-4 gap-16">
             
-            {/* Left Column - Sticky Navigation */}
             <div className="col-span-1">
               <div className="sticky top-32">
                 <nav className="space-y-2">
@@ -286,7 +272,6 @@ export default function PlatformPage() {
               </div>
             </div>
 
-            {/* Right Column - Scrolling Content */}
             <div className="col-span-3 space-y-32">
               {modules.map((module) => (
                 <div
@@ -295,7 +280,6 @@ export default function PlatformPage() {
                   data-module={module.number}
                   className="scroll-mt-32"
                 >
-                  {/* Headline */}
                   <h2 
                     className="mb-6 text-[#332D2A]"
                     style={{ 
@@ -307,7 +291,6 @@ export default function PlatformPage() {
                     {String(module.number).padStart(2, '0')}. {module.title}
                   </h2>
 
-                  {/* Body Text */}
                   <p 
                     className="text-xl leading-relaxed text-[#332D2A] mb-8 max-w-3xl"
                     style={{ fontFamily: 'var(--font-switzer)' }}
@@ -315,7 +298,6 @@ export default function PlatformPage() {
                     {module.body}
                   </p>
 
-                  {/* Sub-features */}
                   <ul className="space-y-3 mb-12">
                     {module.subFeatures.map((feature) => (
                       <li 
@@ -328,7 +310,6 @@ export default function PlatformPage() {
                     ))}
                   </ul>
 
-                  {/* Visual */}
                   <div className="relative aspect-[16/10] bg-white border border-[#EAE3DB] rounded-lg overflow-hidden">
                     {getUIVisual(module.number)}
                   </div>
@@ -339,10 +320,8 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Mobile - Interactive Stack */}
       <MobilePlatform modules={modules} />
 
-      {/* The Intelligence Layer */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-6xl mx-auto px-6 xl:px-0 text-center">
           
@@ -360,7 +339,6 @@ export default function PlatformPage() {
             Vault's proprietary AI analyzes millions of data points—from sales velocity and trend forecasts to fabric composition and stylist sentiment—to deliver insights that are not just fast, but right.
           </p>
 
-          {/* Visual */}
           <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
             <Image
               src="/assets/images/68acdbeab43201c94bbf5ed3_IMG_8758.jpg"
@@ -373,7 +351,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* The Integration Layer */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-6xl mx-auto px-6 xl:px-0">
           
@@ -391,7 +368,6 @@ export default function PlatformPage() {
             Vault layers onto your existing stack, unifying your tools without replacing them. We connect seamlessly with your e-commerce platform, ERP, and CRM.
           </p>
 
-          {/* Typographic Logo Wall */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {integrations.map((integration) => (
               <div
@@ -410,7 +386,6 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-4xl mx-auto px-6 xl:px-0 text-center">
           
@@ -429,7 +404,6 @@ export default function PlatformPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            {/* Primary CTA */}
             <a
               href="/results"
               className="px-8 py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660] whitespace-nowrap"
@@ -442,7 +416,6 @@ export default function PlatformPage() {
               View Case Studies
             </a>
 
-            {/* Secondary CTA */}
             <Link
               href="/briefing"
               className="inline-block px-8 py-4 border-[1px] border-[#C07A56] text-[#C07A56] transition-all duration-300 hover:bg-[#C07A56] hover:text-[#F7F5F2] whitespace-nowrap"
@@ -552,7 +525,6 @@ function MobilePlatform({ modules }: { modules: any[] }) {
     <section className="relative bg-[#F7F5F2] py-20 md:hidden px-6">
       <div className="space-y-8">
         
-        {/* Tap Navigation */}
         <div className="space-y-1">
           {modules.map((module) => {
             const isActive = mobileActive === module.number
@@ -601,7 +573,6 @@ function MobilePlatform({ modules }: { modules: any[] }) {
           })}
         </div>
 
-        {/* Mobile UI Visuals */}
         <div className="relative h-[400px]">
           {modules.map((module) => (
             <div

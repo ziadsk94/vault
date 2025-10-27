@@ -98,7 +98,6 @@ export default function ResultsPage() {
             Proof. Not Promises.
           </h1>
 
-          {/* Sub-headline */}
           <p 
             className="text-[#332D2A] leading-relaxed max-w-3xl mx-auto mb-12"
             style={{ 
@@ -109,21 +108,17 @@ export default function ResultsPage() {
             We provide the intelligence infrastructure for measurable results. Explore our findings from leaders in luxury retail.
           </p>
 
-          {/* Divider */}
           <div className="h-[1px] bg-[#EAE3DB] max-w-2xl mx-auto"></div>
         </div>
       </section>
 
-      {/* Executive Summary - Key Metrics */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Desktop/Tablet - 3 Column Grid */}
           <div className="hidden md:grid md:grid-cols-3 md:gap-12">
             {executiveMetrics.map((metric, index) => (
               <div key={index} className="text-center space-y-6">
                 
-                {/* The Data */}
                 <div 
                   id={`metric-${index}`}
                   className="text-[120px] font-normal text-[#C07A56]"
@@ -135,7 +130,6 @@ export default function ResultsPage() {
                   />
                 </div>
 
-                {/* The Context */}
                 <h3 
                   className="font-semibold text-[#332D2A]"
                   style={{ 
@@ -146,7 +140,6 @@ export default function ResultsPage() {
                   {metric.context}
                 </h3>
 
-                {/* The Explanation */}
                 <p 
                   className="text-[#332D2A] leading-relaxed"
                   style={{ 
@@ -160,12 +153,10 @@ export default function ResultsPage() {
             ))}
           </div>
 
-          {/* Mobile - Stacked */}
           <div className="md:hidden space-y-16">
             {executiveMetrics.map((metric, index) => (
               <div key={index} className="text-center space-y-6">
                 
-                {/* The Data */}
                 <div 
                   id={`metric-mobile-${index}`}
                   className="text-7xl font-normal text-[#C07A56]"
@@ -177,7 +168,6 @@ export default function ResultsPage() {
                   />
                 </div>
 
-                {/* The Context */}
                 <h3 
                   className="text-2xl font-semibold text-[#332D2A]"
                   style={{ fontFamily: 'var(--font-switzer)' }}
@@ -185,7 +175,6 @@ export default function ResultsPage() {
                   {metric.context}
                 </h3>
 
-                {/* The Explanation */}
                 <p 
                   className="text-base text-[#332D2A] leading-relaxed"
                   style={{ fontFamily: 'var(--font-switzer)' }}
@@ -198,11 +187,9 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* The Reports - Case Study Index */}
       <section className="relative bg-[#F7F5F2] py-20">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Desktop/Tablet - Ledger Layout */}
           <div className="hidden md:block space-y-0">
             {caseStudies.map((study, index) => (
               <Link
@@ -212,7 +199,6 @@ export default function ResultsPage() {
                 onMouseEnter={() => setHoveredCase(index)}
                 onMouseLeave={() => setHoveredCase(null)}
               >
-                {/* Hover Background Image */}
                 {hoveredCase === index && (
                   <div className="absolute inset-0 opacity-[0.03] transition-opacity duration-500 pointer-events-none overflow-hidden">
                     <Image
@@ -225,10 +211,8 @@ export default function ResultsPage() {
                   </div>
                 )}
 
-                {/* Content Grid */}
                 <div className="relative grid grid-cols-10 gap-8 items-center">
                   
-                  {/* Column 1: Category (10%) */}
                   <div className="col-span-1">
                     <div 
                       className="text-[#C07A56] mb-1"
@@ -248,7 +232,6 @@ export default function ResultsPage() {
                     </div>
                   </div>
 
-                  {/* Column 2: Title (50%) */}
                   <div className="col-span-5">
                     <h2 
                       className="text-[40px] leading-tight text-[#332D2A] relative inline-block"
@@ -263,7 +246,6 @@ export default function ResultsPage() {
                     </h2>
                   </div>
 
-                  {/* Column 3: Key Metric (20%) */}
                   <div className="col-span-2 text-center">
                     <div 
                       className="text-[40px] font-normal text-[#332D2A] mb-1"
@@ -279,7 +261,6 @@ export default function ResultsPage() {
                     </div>
                   </div>
 
-                  {/* Column 4: Link (20%) */}
                   <div className="col-span-2 text-right">
                     <div 
                       className="text-[#C07A56] inline-block"
@@ -297,7 +278,6 @@ export default function ResultsPage() {
             ))}
           </div>
 
-          {/* Mobile - Stacked Cards */}
           <div className="md:hidden space-y-0">
             {caseStudies.map((study, index) => (
               <Link
@@ -307,7 +287,6 @@ export default function ResultsPage() {
               >
                 <div className="space-y-4 text-center">
                   
-                  {/* Category */}
                   <div>
                     <div 
                       className="text-[#C07A56] mb-1"
@@ -327,7 +306,6 @@ export default function ResultsPage() {
                     </div>
                   </div>
 
-                  {/* Title */}
                   <h2 
                     className="text-3xl leading-tight text-[#332D2A]"
                     style={{ fontFamily: 'var(--font-ogg-display)' }}
@@ -335,7 +313,6 @@ export default function ResultsPage() {
                     {study.title}
                   </h2>
 
-                  {/* Key Metric */}
                   <div>
                     <div 
                       className="text-4xl font-semibold text-[#332D2A] mb-1"
@@ -351,7 +328,6 @@ export default function ResultsPage() {
                     </div>
                   </div>
 
-                  {/* Link */}
                   <div 
                     className="text-[#C07A56]"
                     style={{ 
@@ -369,11 +345,9 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* The Qualitative Proof - Testimonial */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-4xl mx-auto px-6 xl:px-0 text-center">
           
-          {/* The Quote */}
           <p 
             className="text-4xl md:text-5xl lg:text-6xl text-[#332D2A] leading-tight mb-8"
             style={{ fontFamily: 'var(--font-ogg-display)' }}
@@ -381,7 +355,6 @@ export default function ResultsPage() {
             "{testimonial.quote}"
           </p>
 
-          {/* The Attribution */}
           <div className="pt-6 border-t border-[#EAE3DB]">
             <p 
               className="text-lg md:text-xl font-semibold text-[#332D2A]"
@@ -393,11 +366,9 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="relative bg-[#332D2A] py-32 md:py-40">
         <div className="max-w-4xl mx-auto px-6 xl:px-0 text-center">
           
-          {/* Headline */}
           <h2 
             className="mb-8 text-[#F7F5F2]"
             style={{ 
@@ -409,7 +380,6 @@ export default function ResultsPage() {
             See the Intelligence in Action.
           </h2>
 
-          {/* Body Copy */}
           <p 
             className="text-lg md:text-xl mb-10 text-[#EAE3DB] max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-switzer)' }}
@@ -417,7 +387,6 @@ export default function ResultsPage() {
             Request a private briefing with our strategy team to see how Vault's infrastructure can be calibrated for your brand.
           </p>
 
-          {/* CTA Button */}
           <Link
             href="/briefing"
             className="inline-block px-8 py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660]"

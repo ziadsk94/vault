@@ -32,7 +32,6 @@ export default function Footer() {
 
   return (
     <>
-      {/* Part 1: The Final CTA */}
       <section 
         id="final-cta"
         className="relative bg-[#332D2A] py-32 md:py-40 overflow-hidden"
@@ -43,7 +42,6 @@ export default function Footer() {
       >
         <div className="max-w-4xl mx-auto px-6 xl:px-0 text-center">
           
-          {/* Headline */}
           <h2 
             className="mb-8 text-[#F7F5F2]"
             style={{ 
@@ -55,7 +53,6 @@ export default function Footer() {
             See the Intelligence in Action.
           </h2>
 
-          {/* Body Copy */}
           <p 
             className="text-lg md:text-xl mb-10 text-[#EAE3DB] max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-switzer)' }}
@@ -63,7 +60,6 @@ export default function Footer() {
             Request a private briefing with our strategy team to see how Vault's infrastructure can be calibrated for your brand.
           </p>
 
-          {/* CTA Button */}
           <Link
             href="/briefing"
             className="inline-block px-8 py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660]"
@@ -78,14 +74,11 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Part 2: The Footer */}
       <footer className="relative bg-[#F7F5F2] border-t border-[#EAE3DB] py-16">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Desktop/Tablet - 4 Column Grid */}
           <div className="hidden md:grid md:grid-cols-4 md:gap-12">
             
-            {/* Column 1: Brand */}
             <div>
               <div 
                 className="text-2xl mb-4 text-[#332D2A]"
@@ -101,7 +94,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Column 2: Navigation */}
             <div>
               <nav className="space-y-3">
                 {['Platform', 'Results', 'Our Thesis'].map((link) => (
@@ -118,7 +110,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Column 3: Social & Legal */}
             <div>
               <nav className="space-y-3">
                 <a
@@ -150,7 +141,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Column 4: Copyright & Action */}
             <div>
               <p 
                 className="text-base text-[#332D2A] mb-3"
@@ -169,10 +159,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Mobile - Stacked Layout */}
           <div className="md:hidden space-y-10">
             
-            {/* Block 1: Brand */}
             <div>
               <div 
                 className="text-2xl mb-4 text-[#332D2A]"
@@ -188,7 +176,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Block 2: Navigation */}
             <div>
               <nav className="space-y-3">
                 {['Platform', 'Results', 'Our Thesis'].map((link) => (
@@ -205,7 +192,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Block 3: Social & Legal */}
             <div>
               <nav className="space-y-3">
                 <a
@@ -237,7 +223,6 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Block 4: Copyright & Action (Side by side) */}
             <div className="flex items-center justify-between pt-4 border-t border-[#EAE3DB]">
               <p 
                 className="text-sm text-[#332D2A]"

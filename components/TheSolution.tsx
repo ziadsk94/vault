@@ -76,7 +76,6 @@ export default function TheSolution() {
           >
             <div className="aspect-[16/10] bg-gradient-to-br from-[#F7F5F2] to-[#EAE3DB]">
               
-              {/* Top Bar - Browser-like header */}
               <div className="absolute top-0 left-0 right-0 h-12 bg-[#EAE3DB] border-b border-[#D4CCC4] flex items-center px-4 gap-2">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -85,10 +84,8 @@ export default function TheSolution() {
                 </div>
               </div>
 
-              {/* Grid Layout */}
               <div className="absolute inset-0 pt-12 p-6 grid grid-cols-12 gap-4">
                 
-                {/* Client Profile Module - Left */}
                 <div 
                   className="col-span-4 bg-white p-6 rounded border border-[#EAE3DB] shadow-sm"
                   style={{
@@ -109,7 +106,6 @@ export default function TheSolution() {
                   </div>
                 </div>
 
-                {/* Main Dashboard Area - Center */}
                 <div 
                   className="col-span-8 space-y-4"
                   style={{
@@ -118,7 +114,6 @@ export default function TheSolution() {
                     transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
                   }}
                 >
-                  {/* Stylist Notes Feed - Top */}
                   <div 
                     className="bg-white p-4 rounded border border-[#EAE3DB] shadow-sm"
                     style={{
@@ -136,7 +131,6 @@ export default function TheSolution() {
                     </div>
                   </div>
 
-                  {/* Live Inventory - Bottom */}
                   <div 
                     className="bg-white p-4 rounded border border-[#EAE3DB] shadow-sm"
                     style={{
@@ -163,9 +157,7 @@ export default function TheSolution() {
           </div>
         </div>
 
-        {/* Mobile - Vertical Assembly Phone UI */}
         <div className="md:hidden relative">
-          {/* Empty Phone Frame */}
           <div 
             className="relative bg-black rounded-[2rem] p-2 shadow-xl"
             style={{
@@ -174,15 +166,11 @@ export default function TheSolution() {
               transition: 'opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s'
             }}
           >
-            {/* Phone Screen */}
             <div className="bg-white rounded-[1.5rem] overflow-hidden">
-              {/* Notch */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-2xl z-10"></div>
               
-              {/* Vertical Stack */}
               <div className="space-y-3 p-4 pt-8">
                 
-                {/* Client Profile Card - Top */}
                 <div 
                   className="bg-white rounded-lg p-4 border border-[#EAE3DB] shadow-sm"
                   style={{
@@ -203,7 +191,6 @@ export default function TheSolution() {
                   </h3>
                 </div>
 
-                {/* Recommended Product - Middle */}
                 <div 
                   className="bg-[#F7F5F2] rounded-lg p-4 border border-[#EAE3DB] shadow-sm"
                   style={{
@@ -221,7 +208,6 @@ export default function TheSolution() {
                   </div>
                 </div>
 
-                {/* Live Inventory Status - Bottom */}
                 <div 
                   className="bg-white rounded-lg p-4 border border-[#EAE3DB] shadow-sm"
                   style={{

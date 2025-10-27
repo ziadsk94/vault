@@ -30,11 +30,9 @@ export default function BriefingPage() {
   return (
     <main className="bg-[#F7F5F2] min-h-screen">
       
-      {/* Section 1: Page Header */}
       <section className="py-16 md:py-24 border-b border-[#EAE3DB]">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Headline */}
           <h1 
             className="text-[50px] md:text-[70px] lg:text-[90px] leading-[0.95] text-[#332D2A] mb-6"
             style={{ fontFamily: 'var(--font-ogg-display)' }}
@@ -42,7 +40,6 @@ export default function BriefingPage() {
             Request a Private Briefing.
           </h1>
 
-          {/* Sub-headline */}
           <p 
             className="text-lg md:text-xl text-[#332D2A] leading-relaxed max-w-4xl"
             style={{ 
@@ -55,17 +52,13 @@ export default function BriefingPage() {
         </div>
       </section>
 
-      {/* Section 2: Two-Column Form */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Desktop/Tablet - Two Column Layout */}
           <div className="hidden md:grid md:grid-cols-2 md:gap-16 lg:gap-24">
             
-            {/* Left Column - Sticky "Assurance" */}
             <div className="sticky top-32 h-fit">
               
-              {/* What to Expect */}
               <div className="mb-12">
                 <h2 
                   className="font-semibold text-[#332D2A] mb-6"
@@ -99,7 +92,6 @@ export default function BriefingPage() {
                 </ul>
               </div>
 
-              {/* Social Proof */}
               <div className="pt-8 border-t border-[#EAE3DB]">
                 <p 
                   className="text-[#332D2A] leading-relaxed mb-4"
@@ -119,12 +111,10 @@ export default function BriefingPage() {
               </div>
             </div>
 
-            {/* Right Column - Form */}
             <div>
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   
-                  {/* First Name */}
                   <div>
                     <label 
                       htmlFor="firstName"
@@ -155,7 +145,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Last Name */}
                   <div>
                     <label 
                       htmlFor="lastName"
@@ -186,7 +175,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
                     <label 
                       htmlFor="email"
@@ -217,7 +205,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Company */}
                   <div>
                     <label 
                       htmlFor="company"
@@ -248,7 +235,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Job Title */}
                   <div>
                     <label 
                       htmlFor="jobTitle"
@@ -279,7 +265,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label 
                       htmlFor="message"
@@ -310,7 +295,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="w-full py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660]"
@@ -325,7 +309,6 @@ export default function BriefingPage() {
                   </button>
                 </form>
               ) : (
-                /* Success State */
                 <div className="py-12">
                   <h2 
                     className="text-[#332D2A] mb-6"
@@ -350,15 +333,12 @@ export default function BriefingPage() {
             </div>
           </div>
 
-          {/* Mobile - Vertical Stack */}
           <div className="md:hidden space-y-12">
             
-            {/* Form First */}
             <div>
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   
-                  {/* First Name */}
                   <div>
                     <label 
                       htmlFor="firstName-mobile"
@@ -389,7 +369,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Last Name */}
                   <div>
                     <label 
                       htmlFor="lastName-mobile"
@@ -420,7 +399,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Email */}
                   <div>
                     <label 
                       htmlFor="email-mobile"
@@ -451,7 +429,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Company */}
                   <div>
                     <label 
                       htmlFor="company-mobile"
@@ -482,7 +459,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Job Title */}
                   <div>
                     <label 
                       htmlFor="jobTitle-mobile"
@@ -513,7 +489,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label 
                       htmlFor="message-mobile"
@@ -544,7 +519,6 @@ export default function BriefingPage() {
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="w-full py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660]"
@@ -559,7 +533,6 @@ export default function BriefingPage() {
                   </button>
                 </form>
               ) : (
-                /* Success State */
                 <div className="py-12">
                   <h2 
                     className="text-[#332D2A] mb-6"
@@ -583,10 +556,8 @@ export default function BriefingPage() {
               )}
             </div>
 
-            {/* Assurance Block - Below Form */}
             <div className="pt-8 border-t border-[#EAE3DB]">
               
-              {/* What to Expect */}
               <div className="mb-8">
                 <h2 
                   className="font-semibold text-[#332D2A] mb-6"
@@ -620,7 +591,6 @@ export default function BriefingPage() {
                 </ul>
               </div>
 
-              {/* Social Proof */}
               <div className="pt-8 border-t border-[#EAE3DB]">
                 <p 
                   className="text-[#332D2A] leading-relaxed mb-4"

@@ -63,7 +63,6 @@ export default function HowItWorks() {
     >
       <div className="max-w-7xl mx-auto px-6 xl:px-0">
         
-        {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 
             className="text-[50px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A]"
@@ -73,10 +72,8 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        {/* Desktop/Tablet - Two Column Interactive Ledger */}
         <div className="hidden md:grid md:grid-cols-2 md:gap-16">
           
-          {/* Left Column - The Narrative */}
           <div className="space-y-32">
             {blocks.map((block, index) => {
               const isActive = activeBlock === index + 1
@@ -110,11 +107,9 @@ export default function HowItWorks() {
             })}
           </div>
 
-          {/* Right Column - The Evidence (Sticky UI) */}
           <div className="sticky top-32 h-[600px]">
             <div className="relative h-full bg-white border border-[#EAE3DB] rounded-lg shadow-lg overflow-hidden">
               
-              {/* UI State 1: Unified Dashboard */}
               <div 
                 className={`absolute inset-0 p-8 transition-opacity duration-1000 ${
                   activeBlock === 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -135,7 +130,6 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              {/* UI State 2: Predictive Dashboard */}
               <div 
                 className={`absolute inset-0 p-8 transition-opacity duration-1000 ${
                   activeBlock === 2 ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -160,7 +154,6 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              {/* UI State 3: Sales Activation */}
               <div 
                 className={`absolute inset-0 p-8 transition-opacity duration-1000 ${
                   activeBlock === 3 ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -190,12 +183,9 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Mobile - Interactive Stack */}
         <div className="md:hidden space-y-8">
           
-          {/* UI Visual - Top */}
           <div className="relative bg-white border border-[#EAE3DB] rounded-lg shadow-sm overflow-hidden h-[400px]">
-            {/* UI State 1 */}
             <div 
               className={`absolute inset-0 transition-opacity duration-700 ${
                 mobileActive === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -216,7 +206,6 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            {/* UI State 2 */}
             <div 
               className={`absolute inset-0 transition-opacity duration-700 ${
                 mobileActive === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -240,7 +229,6 @@ export default function HowItWorks() {
               </div>
             </div>
 
-            {/* UI State 3 */}
             <div 
               className={`absolute inset-0 transition-opacity duration-700 ${
                 mobileActive === 3 ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -268,7 +256,6 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Tap Navigation - Bottom */}
           <div className="space-y-1">
             {blocks.map((block, index) => {
               const isActive = mobileActive === index + 1

@@ -1,6 +1,5 @@
 import localFont from 'next/font/local'
 
-// Switzer font family
 export const switzer = localFont({
   src: [
     {
@@ -156,7 +155,6 @@ export const oggDisplay = localFont({
   display: 'swap',
 })
 
-// Ogg Text font family
 export const oggText = localFont({
   src: [
     {

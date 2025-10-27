@@ -101,7 +101,6 @@ export default function TheResults() {
     <section className="relative bg-[#F7F5F2] py-32 md:py-40">
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
         
-        {/* Section Header */}
         <div className="text-center mb-20 md:mb-32">
           <h2 
             className="text-[50px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A]"
@@ -111,15 +110,11 @@ export default function TheResults() {
           </h2>
         </div>
 
-        {/* Desktop/Tablet - Ledger Layout */}
         <div className="hidden md:block space-y-16">
-          {/* Metric Blocks */}
           {metricBlocks.map((block, index) => (
             <div key={index} className="border-t border-[#EAE3DB] pt-16">
-              {/* 3-Column Grid */}
               <div className="grid grid-cols-3 gap-12 items-center">
                 
-                {/* Column 1: The Data */}
                 <div className="text-center md:text-left">
                   <MetricNumber 
                     id={`metric-${index}`}
@@ -128,7 +123,6 @@ export default function TheResults() {
                   />
                 </div>
 
-                {/* Column 2: The Context */}
                 <div className="text-center md:text-left">
                   <h3 
                     className="font-semibold text-[#332D2A] mb-4"
@@ -141,7 +135,6 @@ export default function TheResults() {
                   </h3>
                 </div>
 
-                {/* Column 3: The Explanation */}
                 <div className="text-center md:text-left">
                   <p 
                     className="text-[#332D2A] leading-relaxed"
@@ -158,15 +151,11 @@ export default function TheResults() {
           ))}
         </div>
 
-        {/* Mobile - Stacked Layout */}
         <div className="md:hidden space-y-16">
-          {/* Metric Blocks */}
           {metricBlocks.map((block, index) => (
             <div key={index} className="border-t border-[#EAE3DB] pt-12">
-              {/* Single Column Stack */}
               <div className="space-y-6 text-center">
                 
-                {/* The Data */}
                 <MetricNumber 
                   id={`metric-mobile-${index}`}
                   value={block.number}
@@ -174,7 +163,6 @@ export default function TheResults() {
                   isMobile
                 />
 
-                {/* The Context */}
                 <h3 
                   className="text-2xl font-semibold text-[#332D2A]"
                   style={{ fontFamily: 'var(--font-switzer)' }}
@@ -182,7 +170,6 @@ export default function TheResults() {
                   {block.context}
                 </h3>
 
-                {/* The Explanation */}
                 <p 
                   className="text-base text-[#332D2A] leading-relaxed max-w-xl mx-auto"
                   style={{ fontFamily: 'var(--font-switzer)' }}

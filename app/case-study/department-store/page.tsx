@@ -48,11 +48,9 @@ export default function DepartmentStoreCaseStudy() {
   return (
     <main className="bg-[#F7F5F2]">
       
-      {/* Section 1: Hero */}
       <section className="py-16 md:py-24 border-b border-[#EAE3DB]">
         <div className="max-w-6xl mx-auto px-6 xl:px-0">
           
-          {/* Client Category */}
           <div 
             className="text-[#C07A56] mb-4"
             style={{ 
@@ -65,7 +63,6 @@ export default function DepartmentStoreCaseStudy() {
             DOSSIER: MAJOR DEPARTMENT STORE
           </div>
 
-          {/* Headline */}
           <h1 
             className="text-[40px] md:text-[60px] lg:text-[80px] leading-[0.95] text-[#332D2A] mb-6"
             style={{ fontFamily: 'var(--font-ogg-display)' }}
@@ -73,7 +70,6 @@ export default function DepartmentStoreCaseStudy() {
             How 95% Full-Price Sell-Through Was Achieved by Unifying Inventory and Client Data.
           </h1>
 
-          {/* Sub-headline */}
           <p 
             className="text-lg md:text-xl text-[#332D2A] leading-relaxed max-w-4xl"
             style={{ 
@@ -86,11 +82,9 @@ export default function DepartmentStoreCaseStudy() {
         </div>
       </section>
 
-      {/* Section 2: Key Metrics */}
       <section id="key-metrics" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           
-          {/* Desktop/Tablet - 4 Column Grid */}
           <div className="hidden md:grid md:grid-cols-4 md:gap-8">
             <MetricBlock 
               data="95%"
@@ -114,7 +108,6 @@ export default function DepartmentStoreCaseStudy() {
             />
           </div>
 
-          {/* Mobile - Single Column */}
           <div className="md:hidden space-y-8">
             <MetricBlock 
               data="95%"
@@ -144,11 +137,9 @@ export default function DepartmentStoreCaseStudy() {
         </div>
       </section>
 
-      {/* Section 3: The Report */}
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 xl:px-0">
           
-          {/* Chapter 01: The Challenge */}
           <div className="mb-24">
             <h2 
               className="text-[40px] md:text-[48px] leading-tight text-[#332D2A] mb-8"
@@ -179,7 +170,6 @@ export default function DepartmentStoreCaseStudy() {
               </p>
             </div>
 
-            {/* Visual: Full-width Image */}
             <div className="relative aspect-[16/9] overflow-hidden -mx-6 md:mx-0 mb-12">
               <Image
                 src="/assets/images/68acdc1488cc81d5b8d80dba_IMG_8759.jpg"
@@ -201,7 +191,6 @@ export default function DepartmentStoreCaseStudy() {
             </p>
           </div>
 
-          {/* Chapter 02: The Solution */}
           <div className="mb-24">
             <h2 
               className="text-[40px] md:text-[48px] leading-tight text-[#332D2A] mb-8"
@@ -232,7 +221,6 @@ export default function DepartmentStoreCaseStudy() {
               </p>
             </div>
 
-            {/* Visual: UI Evidence */}
             <div className="relative aspect-[16/9] bg-white border border-[#EAE3DB] rounded-lg overflow-hidden mb-12">
               <div className="p-8 h-full flex items-center justify-center">
                 <div className="space-y-6 w-full">
@@ -260,7 +248,6 @@ export default function DepartmentStoreCaseStudy() {
             </p>
           </div>
 
-          {/* Chapter 03: The Results */}
           <div className="mb-24">
             <h2 
               className="text-[40px] md:text-[48px] leading-tight text-[#332D2A] mb-8"
@@ -291,7 +278,6 @@ export default function DepartmentStoreCaseStudy() {
               </p>
             </div>
 
-            {/* Visual: Animated Data Chart */}
             <div ref={chartRef} className="relative bg-white border border-[#EAE3DB] rounded-lg p-8 mb-12">
               <h3 
                 className="mb-8 text-[#332D2A]"
@@ -305,7 +291,6 @@ export default function DepartmentStoreCaseStudy() {
               </h3>
               
               <div className="space-y-6">
-                {/* Before Bar */}
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>Before</span>
@@ -321,7 +306,6 @@ export default function DepartmentStoreCaseStudy() {
                   </div>
                 </div>
 
-                {/* After Bar */}
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)' }}>After</span>
@@ -353,11 +337,9 @@ export default function DepartmentStoreCaseStudy() {
         </div>
       </section>
 
-      {/* Section 4: Qualitative Proof */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 xl:px-0">
           
-          {/* Testimonial */}
           <div className="text-center">
             <p 
               className="text-[#332D2A] leading-relaxed mb-6"
@@ -382,11 +364,9 @@ export default function DepartmentStoreCaseStudy() {
         </div>
       </section>
 
-      {/* Section 5: Dossier Navigation & Final CTA */}
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 xl:px-0">
           
-          {/* Next Report */}
           <div className="text-center mb-16">
             <Link
               href="/results"
@@ -403,7 +383,6 @@ export default function DepartmentStoreCaseStudy() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section 
         id="final-cta"
         className="relative bg-[#332D2A] py-32 md:py-40 overflow-hidden"
@@ -414,7 +393,6 @@ export default function DepartmentStoreCaseStudy() {
       >
         <div className="max-w-4xl mx-auto px-6 xl:px-0 text-center">
           
-          {/* Headline */}
           <h2 
             className="mb-8 text-[#F7F5F2]"
             style={{ 
@@ -426,7 +404,6 @@ export default function DepartmentStoreCaseStudy() {
             See the Intelligence in Action.
           </h2>
 
-          {/* Body Copy */}
           <p 
             className="text-lg md:text-xl mb-10 text-[#EAE3DB] max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-switzer)' }}
@@ -434,7 +411,6 @@ export default function DepartmentStoreCaseStudy() {
             Request a private briefing with our strategy team to see how Vault's infrastructure can be calibrated for your brand.
           </p>
 
-          {/* CTA Button */}
           <Link
             href="/briefing"
             className="inline-block px-8 py-4 bg-[#C07A56] text-[#F7F5F2] transition-all duration-300 hover:bg-[#D48660]"

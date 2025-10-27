@@ -32,7 +32,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Desktop Header */}
       <header
         className={`sticky top-0 z-50 bg-[#F7F5F2] border-b-[1px] border-[#EAE3DB] transition-all duration-300 ${
           isScrolled ? 'py-6' : 'py-10'
@@ -40,14 +39,11 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 xl:px-0">
           <div className="flex items-center justify-between">
-            {/* Left: VAULT wordmark */}
             <Link href="/" className="text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
               VAULT
             </Link>
 
-            {/* Right: Navigation Links and CTA */}
             <div className="flex items-center gap-8">
-              {/* Navigation Links */}
               <nav className="flex items-center gap-8">
                 {navLinks.map((link) => (
                   <Link
@@ -66,7 +62,6 @@ export default function Header() {
                 ))}
               </nav>
 
-              {/* CTA Button */}
               <Link
                 href="/briefing"
                 className="relative px-6 py-2.5 border-[1px] border-[#C07A56] text-[#C07A56] transition-all duration-300 hover:bg-[#C07A56] hover:text-[#F7F5F2] whitespace-nowrap inline-block"
@@ -83,16 +78,13 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Header */}
       <header className="sticky top-0 z-50 bg-[#F7F5F2] border-b-[1px] border-[#EAE3DB] py-4 md:hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between">
-            {/* Left: VAULT wordmark */}
             <Link href="/" className="text-[#332D2A]" style={{ fontFamily: 'var(--font-switzer)', fontWeight: 600 }}>
               VAULT
             </Link>
 
-            {/* Right: Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="flex items-center gap-2 text-[#332D2A] uppercase tracking-wide"
@@ -123,14 +115,12 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 bg-[#F7F5F2] transition-opacity duration-500 md:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full px-6">
-          {/* Navigation Links */}
           <nav className="flex flex-col items-center gap-8 mb-12">
             {navLinks.map((link, index) => (
               <Link
@@ -152,7 +142,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <Link
             href="/briefing"
             className={`px-8 py-4 bg-[#C07A56] text-[#F7F5F2] font-semibold text-lg transition-all duration-500 inline-block ${
@@ -172,7 +161,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Backdrop overlay for mobile menu */}
       {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 z-30 bg-[#F7F5F2] md:hidden"

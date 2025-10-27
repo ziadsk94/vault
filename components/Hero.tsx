@@ -78,7 +78,6 @@ export default function Hero() {
       ref={heroRef}
       className="relative h-screen min-h-[90vh] md:h-screen bg-[#F7F5F2] overflow-hidden"
     >
-      {/* Subtle Intelligence Layer - Dot Grid */}
       <div 
         className="absolute inset-0 opacity-[0.02]"
         style={{
@@ -90,12 +89,10 @@ export default function Hero() {
         }}
       />
 
-      {/* Desktop & Tablet - Left Aligned */}
       <div className="hidden md:block relative z-10 h-full flex flex-col">
         <div className="flex-1 flex items-center justify-start">
           <div className="max-w-7xl mx-auto px-6 xl:px-0 w-full mt-12">
             <div className="max-w-4xl space-y-8">
-              {/* Line 1: Intelligence Infrastructure */}
               <div className="space-y-4" style={{ animation: 'fadeInLetterReveal 1.2s ease-out 0.2s both' }}>
                 <h2 
                   className="text-[18px] uppercase tracking-[0.125em] text-[#332D2A]"
@@ -107,7 +104,6 @@ export default function Hero() {
                 >
                   INTELLIGENCE INFRASTRUCTURE
                 </h2>
-                {/* Rule Line - Draws from left to right */}
                 <div 
                   className="h-[1px] bg-[#EAE3DB]"
                   style={{ 
@@ -117,7 +113,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Line 2: For the Next Era of Luxury Retail. */}
               <div style={{ animation: 'wipeInUp 1.5s ease-out 1.2s both' }}>
                 <h1 
                   className="text-[80px] lg:text-[110px] leading-[0.95] text-[#332D2A] break-normal"
@@ -128,7 +123,6 @@ export default function Hero() {
                 </h1>
               </div>
 
-              {/* Line 3: Substantiation */}
               <p 
                 className="text-lg text-[#332D2A] max-w-[600px] leading-relaxed"
                 style={{ 
@@ -140,7 +134,6 @@ export default function Hero() {
                 Vault unifies client profiles, stylist notes, live inventory, and trend intelligence to deliver predictive, actionable insights.
               </p>
 
-              {/* Line 4: CTA */}
               <div style={{ animation: 'fadeIn 1s ease-out 2.5s both' }}>
                 <Link
                   href="/briefing"
@@ -159,10 +152,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mobile - Center Aligned */}
       <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-center px-6 py-12">
         <div className="max-w-md space-y-6 text-center">
-          {/* Line 1: Intelligence Infrastructure */}
           <div className="space-y-4" style={{ animation: 'fadeInLetterReveal 1.2s ease-out 0.2s both' }}>
             <h2 
               className="text-[14px] uppercase tracking-[0.2em] text-[#332D2A]"
@@ -173,7 +164,6 @@ export default function Hero() {
             >
               INTELLIGENCE INFRASTRUCTURE
             </h2>
-            {/* Rule Line - Draws from center */}
             <div 
               className="h-[1px] bg-[#EAE3DB] mx-auto max-w-[200px]"
               style={{ 
@@ -183,7 +173,6 @@ export default function Hero() {
             />
           </div>
 
-          {/* Line 2: For the Next Era of Luxury Retail. - 3 Line Stack */}
           <div style={{ animation: 'wipeInUp 1.5s ease-out 1.2s both' }}>
             <h1 
               className="text-[56px] leading-[0.95] text-[#332D2A]"
@@ -195,7 +184,6 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* Line 3: Substantiation */}
           <p 
             className="text-base text-[#332D2A] leading-relaxed"
             style={{ 
@@ -207,7 +195,6 @@ export default function Hero() {
             Vault unifies client profiles, stylist notes, live inventory, and trend intelligence to deliver predictive, actionable insights.
           </p>
 
-          {/* Line 4: CTA */}
           <div style={{ animation: 'fadeIn 1s ease-out 2.5s both' }}>
             <Link
               href="/briefing"
