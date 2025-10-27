@@ -453,7 +453,7 @@ function UIVisualDisplay({ moduleNumber }: { moduleNumber: number }) {
           </div>
         </div>
       )
-    case 2: // Live Inventory Engine
+    case 2:
       return (
         <div className="p-8 space-y-6">
           <div className="space-y-3">
@@ -470,7 +470,7 @@ function UIVisualDisplay({ moduleNumber }: { moduleNumber: number }) {
           </div>
         </div>
       )
-    case 3: // Predictive Merchandising
+    case 3:
       return (
         <div className="p-8 space-y-6">
           <div className="flex gap-2">
@@ -489,7 +489,7 @@ function UIVisualDisplay({ moduleNumber }: { moduleNumber: number }) {
           </div>
         </div>
       )
-    case 4: // Associate & Editorial Tools
+    case 4:
       return (
         <div className="p-8 space-y-6">
           <div className="h-8 bg-[#D4CCC4] rounded"></div>
