@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Brand Colors */
 :root {
   --alabaster: #F7F5F2;
   --parchment: #EAE3DB;
@@ -8,7 +7,6 @@
   --ochre: #C07A56;
 }
 
-/* Font Variables */
 * {
   box-sizing: border-box;
 }
@@ -21,7 +19,6 @@ body {
   padding: 0;
 }
 
-/* Utility Classes */
 .font-switzer {
   font-family: var(--font-switzer);
 }
