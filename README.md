@@ -35,7 +35,7 @@ npm run build
 5. Configure build settings:
    - **Framework preset**: Next.js (Static HTML Export)
    - **Build command**: `npm run build`
-   - **Build output directory**: `.next`
+   - **Build output directory**: `out`
    - **Root directory**: `/` (or leave empty)
 6. Click **Save and Deploy**
 
@@ -58,7 +58,7 @@ npm run build
 
 4. Deploy to Cloudflare Pages:
 ```bash
-wrangler pages deploy .next
+wrangler pages deploy out
 ```
 
 ### Environment Variables

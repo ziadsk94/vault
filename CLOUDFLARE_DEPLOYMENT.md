@@ -9,7 +9,7 @@ This project is configured for Cloudflare Pages deployment with Next.js static e
 ### Next.js Config
 - **Output**: Static HTML export (`output: 'export'`)
 - **Images**: Unoptimized (no Next.js Image Optimization)
-- **Build directory**: `.next`
+- **Build directory**: `out`
 
 ### Package Scripts
 - `npm run build` - Builds the project for production
@@ -35,7 +35,7 @@ This project is configured for Cloudflare Pages deployment with Next.js static e
 3. **Configure Build Settings**
    - **Framework preset**: Next.js (Static HTML Export)
    - **Build command**: `npm run build`
-   - **Build output directory**: `.next`
+   - **Build output directory**: `out`
    - **Root directory**: `/` (leave empty)
 
 4. **Deploy**
@@ -62,7 +62,7 @@ This project is configured for Cloudflare Pages deployment with Next.js static e
 
 4. **Deploy**
    ```bash
-   wrangler pages deploy .next
+   wrangler pages deploy out
    ```
 
 ## Custom Domain
@@ -87,7 +87,7 @@ If you need environment variables:
 ```
 Framework: Next.js (Static HTML Export)
 Build command: npm run build
-Output directory: .next
+Output directory: out
 Node version: 18.x or 20.x
 ```
 
