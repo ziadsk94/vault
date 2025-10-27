@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VAULT - The Digital Atelier
+
+Intelligence Infrastructure for the Next Era of Luxury Retail.
 
 ## Getting Started
 
-First, run the development server:
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Cloudflare Pages Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: Deploy via Cloudflare Dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+3. Navigate to **Pages** → **Create a project**
+4. Connect your Git repository
+5. Configure build settings:
+   - **Framework preset**: Next.js (Static HTML Export)
+   - **Build command**: `npm run build`
+   - **Build output directory**: `.next`
+   - **Root directory**: `/` (or leave empty)
+6. Click **Save and Deploy**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Deploy via Wrangler CLI
 
-## Deploy on Vercel
+1. Install Wrangler CLI:
+```bash
+npm install -g wrangler
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Login to Cloudflare:
+```bash
+wrangler login
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Build the project:
+```bash
+npm run build
+```
+
+4. Deploy to Cloudflare Pages:
+```bash
+wrangler pages deploy .next
+```
+
+### Environment Variables
+
+If you need environment variables:
+
+1. Go to your Cloudflare Pages project settings
+2. Navigate to **Environment Variables**
+3. Add your variables for Production, Preview, and Browser bindings
+
+## Project Structure
+
+```
+/app
+  /briefing          # Request a Private Briefing page
+  /case-study        # Case study detail pages
+  /platform          # Platform overview page
+  /results           # Results overview page
+  /thesis            # Our Thesis page
+/components          # React components
+/lib                 # Utilities and configurations
+/public              # Static assets (images, fonts)
+```
+
+## Technologies
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling
+- **Custom Fonts** - Switzer, Ogg Display, Ogg Text
+
+## Pages
+
+- `/` - Homepage with hero, challenge, solution, features, context, results
+- `/platform` - Platform overview with interactive blueprint
+- `/results` - Executive summary and case studies
+- `/thesis` - Manifesto and strategic thinking
+- `/briefing` - Request a private briefing form
+- `/case-study/[slug]` - Individual case study detail pages
+
+## Features
+
+- Responsive design (mobile, tablet, desktop)
+- Smooth scroll animations
+- Parallax effects
+- Interactive UI demonstrations
+- Intelligent ticker animations
+- Data visualization animations
+- Form handling with success states
+
+## License
+
+Private and confidential.
