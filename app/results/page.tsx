@@ -88,11 +88,9 @@ export default function ResultsPage() {
 
   return (
     <main className="bg-[#F7F5F2]">
-      {/* Hero Section */}
       <section className="relative bg-[#F7F5F2] py-32 md:py-40">
         <div className="max-w-6xl mx-auto px-6 xl:px-0 text-center">
           
-          {/* Headline */}
           <h1 
             className="text-[60px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A] mb-6"
             style={{ fontFamily: 'var(--font-ogg-display)' }}

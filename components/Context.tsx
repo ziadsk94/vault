@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
-// Ticker component for Match Score
 function MatchScoreTicker({ targetValue, progress }: { targetValue: number; progress: number }) {
   const [displayValue, setDisplayValue] = useState(0)
 
@@ -39,7 +38,6 @@ export default function Context() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Spread 1
       if (spread1Ref.current) {
         const rect = spread1Ref.current.getBoundingClientRect()
         const windowHeight = window.innerHeight
@@ -47,7 +45,6 @@ export default function Context() {
         setSpread1Progress(progress)
       }
 
-      // Spread 2
       if (spread2Ref.current) {
         const rect = spread2Ref.current.getBoundingClientRect()
         const windowHeight = window.innerHeight
@@ -66,7 +63,6 @@ export default function Context() {
     <section className="relative bg-[#F7F5F2] py-32 md:py-40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 xl:px-0">
         
-        {/* Section Header */}
         <div className="text-center mb-20 md:mb-32">
           <h2 
             className="text-[50px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A]"
@@ -76,12 +72,9 @@ export default function Context() {
           </h2>
         </div>
 
-        {/* Desktop/Tablet - Editorial Spreads */}
         <div className="hidden md:block space-y-32">
           
-          {/* Spread 1: Fabric & Fit */}
           <div ref={spread1Ref} className="grid grid-cols-2 gap-12">
-            {/* Left Column - Luxury Image */}
             <div 
               className="relative overflow-hidden"
               style={{
@@ -110,7 +103,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Right Column - Technology UI */}
             <div 
               className="flex items-center"
               style={{
@@ -145,7 +137,6 @@ export default function Context() {
             </div>
           </div>
 
-          {/* Caption 1 */}
           <p 
             className="text-center text-lg text-[#332D2A] max-w-2xl mx-auto leading-relaxed"
             style={{ 
@@ -157,9 +148,7 @@ export default function Context() {
             Translate craftsmanship into confidence. Ensure every piece is presented with the precision it deserves.
           </p>
 
-          {/* Spread 2: Silhouette & Taste */}
           <div ref={spread2Ref} className="grid grid-cols-2 gap-12">
-            {/* Left Column - Luxury Image */}
             <div 
               className="relative overflow-hidden"
               style={{
@@ -188,7 +177,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Right Column - Technology UI */}
             <div 
               className="flex items-center"
               style={{
@@ -202,7 +190,6 @@ export default function Context() {
                   Client Taste Profile
                 </h3>
                 
-                {/* Section 1: Product */}
                 <div className="mb-8 pb-8 border-b border-[#EAE3DB]">
                   <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-4" style={{ fontFamily: 'var(--font-switzer)' }}>Item Profile:</div>
                   <div className="space-y-3">
@@ -221,7 +208,6 @@ export default function Context() {
                   </div>
                 </div>
 
-                {/* Section 2: Client Match */}
                 <div className="mb-8 pb-8 border-b border-[#EAE3DB]">
                   <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-4" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match:</div>
                   <div className="space-y-3">
@@ -255,7 +241,6 @@ export default function Context() {
                   </div>
                 </div>
 
-                {/* Section 3: The Score */}
                 <div>
                   <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-2" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match Score</div>
                   <div className="text-[72px] leading-none text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)' }}>
@@ -266,7 +251,6 @@ export default function Context() {
             </div>
           </div>
 
-          {/* Caption 2 */}
           <p 
             className="text-center text-lg text-[#332D2A] max-w-2xl mx-auto leading-relaxed"
             style={{ 
@@ -279,12 +263,9 @@ export default function Context() {
           </p>
         </div>
 
-        {/* Mobile - Vertical Diptych */}
         <div className="md:hidden space-y-20">
           
-          {/* Spread 1: Fabric & Fit */}
           <div ref={spread1Ref}>
-            {/* Luxury Image - Full Width */}
             <div className="relative aspect-[4/5] mb-6 -mx-6 overflow-hidden">
               <div 
                 className="absolute inset-0"
@@ -307,7 +288,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Technology UI - Full Width */}
             <div 
               className="bg-white border border-[#EAE3DB] rounded-lg p-6 mb-6"
               style={{
@@ -340,7 +320,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Caption */}
             <p 
               className="text-center text-base text-[#332D2A] leading-relaxed"
               style={{ 
@@ -353,9 +332,7 @@ export default function Context() {
             </p>
           </div>
 
-          {/* Spread 2: Silhouette & Taste */}
           <div ref={spread2Ref}>
-            {/* Luxury Image - Full Width */}
             <div className="relative aspect-[4/5] mb-6 -mx-6 overflow-hidden">
               <div 
                 className="absolute inset-0"
@@ -378,7 +355,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Technology UI - Full Width */}
             <div 
               className="bg-white border border-[#EAE3DB] rounded-lg p-6 mb-6"
               style={{
@@ -392,7 +368,6 @@ export default function Context() {
                 Client Taste Profile
               </h3>
               
-              {/* Section 1: Product */}
               <div className="mb-6 pb-6 border-b border-[#EAE3DB]">
                 <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-3" style={{ fontFamily: 'var(--font-switzer)' }}>Item Profile:</div>
                 <div className="space-y-2">
@@ -411,7 +386,6 @@ export default function Context() {
                 </div>
               </div>
 
-              {/* Section 2: Client Match */}
               <div className="mb-6 pb-6 border-b border-[#EAE3DB]">
                 <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-3" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match:</div>
                 <div className="space-y-2">
@@ -445,7 +419,6 @@ export default function Context() {
                 </div>
               </div>
 
-              {/* Section 3: The Score */}
               <div>
                 <div className="text-xs uppercase tracking-wide text-[#332D2A]/60 mb-2" style={{ fontFamily: 'var(--font-switzer)' }}>Client Match Score</div>
                 <div className="text-[48px] leading-none text-[#C07A56]" style={{ fontFamily: 'var(--font-switzer)' }}>
@@ -454,7 +427,6 @@ export default function Context() {
               </div>
             </div>
 
-            {/* Caption */}
             <p 
               className="text-center text-base text-[#332D2A] leading-relaxed"
               style={{ 

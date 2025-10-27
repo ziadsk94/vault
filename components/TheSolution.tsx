@@ -14,7 +14,6 @@ export default function TheSolution() {
         const windowHeight = window.innerHeight
         const elementTop = rect.top
         
-        // Calculate if section is in view
         if (elementTop < windowHeight && elementTop > -rect.height) {
           const progress = Math.max(0, Math.min(1, 1 - (elementTop / windowHeight)))
           setScrollProgress(progress)
@@ -37,10 +36,8 @@ export default function TheSolution() {
       ref={sectionRef}
       className="relative bg-[#F7F5F2] py-32 md:py-40 overflow-hidden"
     >
-      {/* Centered, Stable Layout */}
       <div className="max-w-6xl mx-auto px-6 xl:px-0">
         
-        {/* Typographic Lockup - Centered */}
         <div 
           className="text-center space-y-6 mb-16 md:mb-20"
           style={{
@@ -48,9 +45,8 @@ export default function TheSolution() {
             transform: hasAnimated ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
           }}
-        >
-          {/* Headline */}
-          <h2 
+        >          
+          <h2
             className="text-[36px] md:text-[80px] lg:text-[100px] leading-[0.95] text-[#332D2A] mb-6"
             style={{ fontFamily: 'var(--font-ogg-display)' }}
           >
@@ -58,7 +54,6 @@ export default function TheSolution() {
             <span className="block">to Clarity.</span>
           </h2>
 
-          {/* Body Copy */}
           <p 
             className="text-base md:text-lg lg:text-xl text-[#332D2A] leading-relaxed max-w-2xl mx-auto"
             style={{ 
@@ -70,9 +65,7 @@ export default function TheSolution() {
           </p>
         </div>
 
-        {/* Desktop/Tablet - The Assembled Dashboard */}
         <div className="hidden md:block relative">
-          {/* Empty UI Frame */}
           <div 
             className="relative bg-white border border-[#EAE3DB] rounded-lg shadow-sm overflow-hidden"
             style={{
